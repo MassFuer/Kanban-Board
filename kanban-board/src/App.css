@@ -2,3 +2,48 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: lightgray;
+  min-height: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkgoldenrod;
+  min-height: 10%;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 80%;
+}
+.sidebar {
+  background-color: lightgreen;
+  width: 15%;
+}
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 10%;
+}
+.sidebar ul li {
+  list-style-type: none;
+}
+.sidebar ul li a {
+  text-decoration: none;
+}
+.kanban-board {
+  background-color: lightcoral;
+  width: 85%;
+}
+footer {
+  background-color: lightsalmon;
+  min-height: 10%;
+}
