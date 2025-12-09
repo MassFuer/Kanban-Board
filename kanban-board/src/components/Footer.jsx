@@ -1,7 +1,9 @@
 function Footer() {
   return (
     <footer>
-      <a href="https://github.com/MassFuer/Kanban-Board">Link to Repo</a>
+      <i className="far fa-comment" data-testid="comment-icon"></i>
+      <i className="fa-brands fa-github"></i>
+      <a href="https://github.com/MassFuer/Kanban-Board">Go to Repo</a>
     </footer>
   );
 }
