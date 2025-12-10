@@ -1,8 +1,9 @@
+import { FaGithub } from "react-icons/fa"; // Font Awesome's GitHub icon
+
 function Footer() {
   return (
     <footer>
-      <i className="far fa-comment" data-testid="comment-icon"></i>
-      <i className="fa-brands fa-github"></i>
+      <FaGithub />
       <a href="https://github.com/MassFuer/Kanban-Board">Go to Repo</a>
     </footer>
   );

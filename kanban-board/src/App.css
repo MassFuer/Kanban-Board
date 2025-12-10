@@ -47,3 +47,45 @@ footer {
   background-color: lightsalmon;
   min-height: 10%;
 }
+.task-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.task-card-container h2 {
+  margin: 2px;
+  padding: 2px;
+}
+.task-card-container p {
+  margin: 2px;
+  padding: 2px;
+}
+.task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.task-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid grey;
+}
+.task-dates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid grey;
+}
