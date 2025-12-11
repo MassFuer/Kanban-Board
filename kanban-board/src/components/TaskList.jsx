@@ -1,21 +1,16 @@
-import { useState } from "react";
-import tasksData from "../data/kanban.json";
 import TaskCard from "./TaskCard";
+import { NavLink } from "react-router-dom";
 
-function TaskList() {
-  const [tasks, setTasks] = useState(tasksData);
-
-  function handleDelete(taskId) {
-    const filteredTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(filteredTasks);
-  }
-  function handleEdit(taskId) {
-    return <TaskEdit />;
-  }
+function TaskList({ tasks, handleDelete }) {
+  // function handleEdit(taskId) {
+  //   return <TaskEdit />;
+  // }
   return (
     <div className="task-card-container">
       {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+        <NavLink to={`/task-details/${task.id}`}>
+          <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+        </NavLink>
       ))}
     </div>
   );

@@ -95,53 +95,53 @@ Read the article [“React Folder Structure in 5 Steps”](https://www.robinwier
 
 ## Research Tasks:
 
-After finishing all the tasks, you can explore adding an additional feature mentioned in the "Additional Features" section below.
+After finishing all the tasks, you can explore adding an additional feature mentioned in the **"Additional Features"** section below.
 
 # Additional Features (Optional)
 If you are looking into implementing additional features and expanding your learning beyond your daily tasks, we recommend exploring the following topics. We've included some suggested reading materials to help you get started:
 
-Tailwind CSS
-Tailwind in 100 Seconds
-Tailwind CSS website
-Install Tailwind CSS with Vite
+- Tailwind CSS
+  - (Tailwind in 100 Seconds)[https://www.youtube.com/watch?v=mr15Xzb1Ook]
+  - (Tailwind CSS website)[https://tailwindcss.com/]
+  - (Install Tailwind CSS with Vite)[https://tailwindcss.com/docs/guides/vite]
 
-State Management and Context API:
-React Docs: Passing Data Deeply with Context
-Extracting State Logic into a Reducer
-Scaling Up with Reducer and Context
+- State Management and Context API:
+  - (React Docs: Passing Data Deeply with Context)[https://react.dev/learn/passing-data-deeply-with-context]
+  - (Extracting State Logic into a Reducer)[https://react.dev/learn/extracting-state-logic-into-a-reducer]
+  - (Scaling Up with Reducer and Context)[https://react.dev/learn/scaling-up-with-reducer-and-context]
 
-Submission
+# Submission
 For the mini project to be considered complete, you must finish all the tasks listed in the project brief and submit the project repo in the Student Portal before the deadline.
 
 :::warning ☝️ The deadline for finishing the mini-project and submitting the project repo is Wednesday of the following week.
 
 
-The Presentation
+# The Presentation
 You will present your game on Friday morning to the class showcasing how your app works, as well as a short presentation in the form of some slides. The format of the presentation will be as follows:
 
-Talking with Slides: 3 minutes
-Demo: 2 minutes
-Total: 5 minutes
+- Talking with Slides: 3 minutes
+- Demo: 2 minutes
+- Total: 5 minutes
 
 All presentations will be done from a staff member’s computer, so your slides need to be online. PowerPoint files, Keynote files, or files of any kind will not be accepted.
 
-Suggested online slide applications:
-Google Slides
-Slides
-Prezi
+- Suggested online slide applications:
+  - Google Slides
+  - Slides
+  - Prezi
 
-Presentation Structure
+## Presentation Structure
 Feel free to present your app as you feel best represents your work, but below you will find a suggested format for the presentation as a guide.
 
-Title Slide (1 slide): your project’s name & your names
-Technical Challenge (1-2 slides):
+- **Title Slide (1 slide):** your project’s name & your names
+- **Technical Challenge (1-2 slides):**
 What was the most important technical challenge(s) you faced?
 How did you overcome that challenge?
-Big Mistake (1-2 slides):
+- **Big Mistake (1-2 slides):**
 What was the biggest mistake you made during this project?
 What did you learn from it?
-Demo Slide (1 slide):
+- **Demo Slide (1 slide):**
 Showcase the state of your application so far.
 Keep the demo concise and aim for it to not exceed 2 minutes.
-Closing Slide (1 slide): your project’s name, your name & a “Thank You”
-Total: 5-7 slides
+- **Closing Slide (1 slide):** your project’s name, your name & a “Thank You”
+- **Total:** 5-7 slides
