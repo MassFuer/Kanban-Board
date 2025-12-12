@@ -4,7 +4,6 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import KanbanBoard from "./components/KanbanBoard";
 import Footer from "./components/Footer";
 import TaskList from "./components/TaskList";
 import DashboardPage from "./pages/DashboardPage";
@@ -20,8 +19,8 @@ function App() {
     setTasks(filteredTasks);
   }
 
-  function handleEdit(taskId) {
-    return;
+  function handleAddTask(newTask) {
+    return setTasks([newTask, ...tasks]);
   }
   return (
     <>
@@ -31,17 +30,17 @@ function App() {
           <Route
             path="/"
             element={
-              <DashboardPage tasks={tasks} handleDelete={handleDelete} />
+              <DashboardPage
+                tasks={tasks}
+                handleDelete={handleDelete}
+                handleAddTask={handleAddTask}
+              />
             }
           />
           <Route
             path="/task-details/:taskId"
             element={
-              <TaskDetailPage
-                tasks={tasks}
-                handleDelete={handleDelete}
-                handleEdit={handleEdit}
-              />
+              <TaskDetailPage tasks={tasks} handleDelete={handleDelete} />
             }
           />
           <Route path="/about" element={<AboutPage />} />

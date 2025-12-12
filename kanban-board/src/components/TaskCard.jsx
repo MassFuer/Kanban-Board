@@ -1,34 +1,49 @@
 import { MdOutlineEdit } from "react-icons/md";
 import { IoExpandOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
-function TaskCard({ task, handleDelete, handleEdit }) {
+function TaskCard({ task, handleDelete }) {
   return (
     <>
       <div className="task-card">
         <h2>{task.title}</h2>
         {/* edit button */}
-        <button onClick={() => handleEdit(task.id)} className="edit">
-          <MdOutlineEdit />
-        </button>
+        <NavLink to={`/task-details/${task.id}`}>
+          <button className="edit">
+            <MdOutlineEdit />
+          </button>
+        </NavLink>
+
         {/* expand button */}
         <button className="toggle">
           <IoExpandOutline />
         </button>
 
-        <textarea type="text" value={task.description} disabled />
-        <p>Assign to: {task.assignee}</p>
+        <p>
+          <strong>Description:</strong>
+          {task.description}
+        </p>
+        <p>
+          <strong>Assign to: </strong>
+          {task.assignee}
+        </p>
         <div className="task-status">
-          <p>Status: {task.status}</p>
-          <p>Priority: {task.priority}</p>
+          <p>
+            <strong>Status:</strong> {task.status}
+          </p>
+          <p>
+            <strong>Priority:</strong> {task.priority}
+          </p>
         </div>
         <div className="task-dates">
           <p>
-            Created date:
+            <strong>Created date:</strong>
+
             <br />
             {task.createdDate}
           </p>
           <p>
-            Due date:
+            <strong>Due date:</strong>
             <br />
             {task.dueDate}
           </p>

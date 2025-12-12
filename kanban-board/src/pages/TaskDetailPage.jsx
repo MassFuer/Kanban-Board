@@ -5,7 +5,7 @@ import TaskCard from "../components/TaskCard";
 function TaskDetailPage({ tasks, handleDelete, handleEdit }) {
   const { taskId } = useParams();
   //   console.log(typeof taskId);
-  const task = tasks.find((task) => task.id === taskId);
+  const task = tasks.find((task) => task.id == taskId);
   //   console.log("task.id", typeof task.id);
 
   return (

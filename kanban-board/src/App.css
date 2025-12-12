@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 #root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+  font-family: "Roboto";
   background-color: lightgray;
   min-height: 100%;
 }
@@ -113,22 +116,31 @@ footer {
   background-color: lightsalmon;
   min-height: 10%;
 }
-.task-card-container {
+.tasks-list-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 5px;
+  gap: 10px;
 }
 
-.task-card-container h2 {
+.tasks-list-container h2 {
   margin: 2px;
   padding: 2px;
 }
-.task-card-container p {
+.tasks-list-container p {
   margin: 2px;
   padding: 2px;
+}
+.tasks-list-container a {
+  text-decoration: none;
+}
+.tasks-list-container a:hover {
+  transform: scale(1.03);
+}
+.tasks-list-container a:visited {
+  text-decoration: none;
 }
 .task-card {
   display: flex;
@@ -138,6 +150,7 @@ footer {
   text-align: center;
   border: 1px solid black;
   border-radius: 8px;
+  background-color: lightblue;
 }
 .task-status {
   display: flex;

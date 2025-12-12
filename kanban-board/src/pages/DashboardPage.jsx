@@ -1,12 +1,13 @@
 import Sidebar from "../components/Sidebar";
-import KanbanBoard from "../components/KanbanBoard";
 import TaskList from "../components/TaskList";
+import CreateTask from "../components/CreateTask";
 
-function DashboardPage({ tasks, handleDelete }) {
+function DashboardPage({ tasks, handleDelete, handleAddTask }) {
+ 
   return (
     <>
       <Sidebar />
-      <KanbanBoard />
+      <CreateTask handleAddTask={handleAddTask} />
       {/* TaskList (all tasks) / TaskCard
           colummn Todo : get all TaskCard in the TaskList that have the status ToDo
           colummn In progress : get all TaskCard in the TaskList that have the status ToDo
