@@ -8,17 +8,19 @@ function TaskCard({ task, handleDelete }) {
       <div className="task-card">
         <h2>{task.title}</h2>
         {/* edit button */}
-        <NavLink to={`/task-details/${task.id}`}>
+        <NavLink to={`/edit-task/${task.id}`}>
           <button className="edit">
             <MdOutlineEdit />
           </button>
         </NavLink>
 
         {/* expand button */}
-        <button className="toggle">
-          <IoExpandOutline />
-        </button>
-
+        <NavLink to={`/task-details/${task.id}`}>
+          {" "}
+          <button className="toggle">
+            <IoExpandOutline />
+          </button>
+        </NavLink>
         <p>
           <strong>Description:</strong>
           {task.description}
