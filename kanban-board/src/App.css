@@ -47,7 +47,7 @@ nav .links a:hover {
 }
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   min-height: 80%;
@@ -57,21 +57,8 @@ main {
   background-color: lightgreen;
   width: 15%;
 }
-.sidebar ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 10px;
-  padding-left: 10%;
-}
-.sidebar ul li {
-  list-style-type: none;
-}
-.sidebar ul li a {
-  text-decoration: none;
-}
-.kanban-board {
+
+.tasks-container {
   background-color: lightcoral;
   width: 85%;
 }
@@ -118,11 +105,12 @@ footer {
 }
 .tasks-list-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   gap: 10px;
+  /* background-color: brown; */
 }
 
 .tasks-list-container h2 {
@@ -133,15 +121,7 @@ footer {
   margin: 2px;
   padding: 2px;
 }
-.tasks-list-container a {
-  text-decoration: none;
-}
-.tasks-list-container a:hover {
-  transform: scale(1.03);
-}
-.tasks-list-container a:visited {
-  text-decoration: none;
-}
+
 .task-card {
   display: flex;
   flex-direction: column;

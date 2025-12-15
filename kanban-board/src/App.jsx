@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import DashboardPage from "./pages/DashboardPage";
 import TaskDetailPage from "./pages/TaskDetailPage";
@@ -11,6 +12,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import tasksData from "./data/kanban.json";
 import EditTaskPage from "./pages/EditTaskPage";
 import { useNavigate } from "react-router-dom";
+import CreateTask from "./components/CreateTask";
 
 function App() {
   // This allows use to navigate without clicking
@@ -41,6 +43,7 @@ function App() {
     <>
       <Navbar />
       <main>
+        <Sidebar />
         <Routes>
           <Route
             path="/"
@@ -65,6 +68,7 @@ function App() {
             }
           />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/form" element={<CreateTask />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
