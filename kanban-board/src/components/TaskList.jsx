@@ -8,21 +8,29 @@ function TaskList({ tasks, handleDelete }) {
 
   return (
     <div className="tasks-list-container">
-      <div className="todo">
+      <div className="todo" draggable>
         <h2>To Do</h2>
-        {todos.map((task) => (
-          <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
-        ))}
+        {todos.length ? (
+          todos.map((task) => (
+            <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+          ))
+        ) : (
+          <h3>Nothing to display</h3>
+        )}
       </div>
 
-      <div className="in-progress">
+      <div className="in-progress" draggable>
         <h2>In Progress</h2>
-        {inProgress.map((task) => (
-          <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
-        ))}
+        {inProgress.length ? (
+          inProgress.map((task) => (
+            <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+          ))
+        ) : (
+          <h3>Nothing to display</h3>
+        )}
       </div>
 
-      <div className="in-review">
+      <div className="in-review" draggable>
         <h2>In review</h2>
         {inReview.length ? (
           inReview.map((task) => (
@@ -33,11 +41,15 @@ function TaskList({ tasks, handleDelete }) {
         )}
       </div>
 
-      <div className="tasks-done">
+      <div className="tasks-done" draggable>
         <h2>Done</h2>
-        {done.map((task) => (
-          <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
-        ))}
+        {done.length ? (
+          done.map((task) => (
+            <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+          ))
+        ) : (
+          <h3>Nothing to display</h3>
+        )}
       </div>
     </div>
   );

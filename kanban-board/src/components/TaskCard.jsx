@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function TaskCard({ task, handleDelete }) {
   return (
     <>
-      <div className="task-card" data-priority={task.priority}>
+      <div className="task-card" data-priority={task.priority} draggable>
         <h2>{task.title}</h2>
         {/* edit button */}
         <NavLink to={`/edit-task/${task.id}`}>

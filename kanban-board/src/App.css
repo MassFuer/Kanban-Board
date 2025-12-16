@@ -236,6 +236,12 @@ footer a:hover {
   color: #6c757d;
   line-height: 1.5;
 }
+
+.task-card button {
+  background-color: #213448;
+  color: #eae0cf;
+  padding:10px;
+}
 .task-card[data-priority="High"] {
   border: 4px solid #ef4444;
 }
