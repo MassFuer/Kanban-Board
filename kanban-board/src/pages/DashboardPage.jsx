@@ -2,7 +2,13 @@ import Sidebar from "../components/Sidebar";
 import TaskList from "../components/TaskList";
 import CreateTask from "../components/CreateTask";
 
-function DashboardPage({ tasks, handleDelete, handleAddTask }) {
+function DashboardPage({
+  tasks,
+  handleDelete,
+  handleAddTask,
+  handleUpdateStatus,
+  setTasks,
+}) {
   return (
     <>
       <div className="tasks-container">
@@ -13,7 +19,12 @@ function DashboardPage({ tasks, handleDelete, handleAddTask }) {
           colummn Todo : get all TaskCard in the TaskList that have the status ToDo
           colummn Todo : get all TaskCard in the TaskList that have the status ToDo */}
 
-        <TaskList tasks={tasks} handleDelete={handleDelete} />
+        <TaskList
+          tasks={tasks}
+          handleDelete={handleDelete}
+          handleUpdateStatus={handleUpdateStatus}
+          setTasks={setTasks}
+        />
       </div>
     </>
   );

@@ -2,10 +2,22 @@ import { MdOutlineEdit } from "react-icons/md";
 import { IoExpandOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
-function TaskCard({ task, handleDelete }) {
+function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
+  const onDrop = (e) => {
+    e.stopPropagation();
+    handleDrop(e, task.status, task);
+  };
+
   return (
     <>
-      <div className="task-card" data-priority={task.priority} draggable>
+      <div
+        className="task-card"
+        data-priority={task.priority}
+        draggable
+        onDragStart={() => handleDragStart(task)}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={onDrop}
+      >
         <h2>{task.title}</h2>
         {/* edit button */}
         <NavLink to={`/edit-task/${task.id}`}>

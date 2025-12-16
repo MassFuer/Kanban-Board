@@ -39,10 +39,18 @@ function App() {
     nav("/");
     return setTasks(updatedTaskArray);
   }
+
+  const handleUpdateStatus = (taskId, newStatus) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === taskId ? { ...task, status: newStatus } : task
+      )
+    );
+  };
   return (
     <>
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main>
         <Routes>
           <Route
@@ -52,6 +60,8 @@ function App() {
                 tasks={tasks}
                 handleDelete={handleDelete}
                 handleAddTask={handleAddTask}
+                handleUpdateStatus={handleUpdateStatus}
+                setTasks={setTasks}
               />
             }
           />
