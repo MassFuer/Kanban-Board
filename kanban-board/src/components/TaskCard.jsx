@@ -3,9 +3,18 @@ import { IoExpandOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
 function TaskCard({ task, handleDelete }) {
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("taskId", task.id);
+  };
+
   return (
     <>
-      <div className="task-card" data-priority={task.priority} draggable>
+      <div
+        className="task-card"
+        data-priority={task.priority}
+        draggable
+        onDragStart={handleDragStart}
+      >
         <h2>{task.title}</h2>
         {/* edit button */}
         <NavLink to={`/edit-task/${task.id}`}>
