@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 function AboutPage() {
   return (
     <>
-      <h1>Project Description</h1>
       <div className="project">
+        <h1>Project Description</h1>
         <p>Team Member:</p>
         <div className="members">
           <div className="profile-links">

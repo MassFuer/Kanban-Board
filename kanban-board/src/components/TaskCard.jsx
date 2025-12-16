@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function TaskCard({ task, handleDelete }) {
   return (
     <>
-      <div className="task-card">
+      <div className="task-card" data-priority={task.priority}>
         <h2>{task.title}</h2>
         {/* edit button */}
         <NavLink to={`/edit-task/${task.id}`}>
@@ -16,7 +16,6 @@ function TaskCard({ task, handleDelete }) {
 
         {/* expand button */}
         <NavLink to={`/task-details/${task.id}`}>
-          {" "}
           <button className="toggle">
             <IoExpandOutline />
           </button>

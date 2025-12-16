@@ -42,8 +42,8 @@ function App() {
   return (
     <>
       <Navbar />
+      <Sidebar />
       <main>
-        <Sidebar />
         <Routes>
           <Route
             path="/"

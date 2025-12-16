@@ -29,36 +29,40 @@ function CreateTask({ handleAddTask }) {
   return (
     <>
       <form onSubmit={handleSubmitForm}>
-        <div className="task-card">
-          <label>Title:*</label>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            placeholder="task title"
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-
-          <label>Description:*</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            placeholder="task description"
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
-
-          <label>Assignee:*</label>
-          <input
-            type="text"
-            name="assignee"
-            value={assignee}
-            placeholder="task assignee"
-            onChange={(e) => setAssignee(e.target.value)}
-            required
-          />
+        <div className="task-form">
+          <label>
+            Title:*
+            <input
+              type="text"
+              name="title"
+              value={title}
+              placeholder="task title"
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Description:*
+            <input
+              type="text"
+              name="description"
+              value={description}
+              placeholder="task description"
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Assignee:*
+            <input
+              type="text"
+              name="assignee"
+              value={assignee}
+              placeholder="task assignee"
+              onChange={(e) => setAssignee(e.target.value)}
+              required
+            />
+          </label>
           {/* Try to implement radio buttons */}
           <label>
             Priority:*
@@ -90,7 +94,9 @@ function CreateTask({ handleAddTask }) {
               <option value="In Review">In Review</option>
               <option value="Done">Done</option>
             </select>
-            <label>Due Date:</label>
+          </label>
+          <label>
+            Due Date:
             <input
               type="date"
               name="dueDate"
@@ -99,6 +105,7 @@ function CreateTask({ handleAddTask }) {
               onChange={(e) => setDueDate(e.target.value)}
             />
           </label>
+
           <button type="submit" className="delete">
             Add task
           </button>
