@@ -29,7 +29,7 @@ function EditTaskPage({ tasks, handleEditTask }) {
   return (
     <>
       <form onSubmit={handleUpdateTask}>
-        <div className="task-card">
+        <div className="task-card task-edit">
           <label>Title:</label>
           <input
             type="text"
@@ -37,17 +37,16 @@ function EditTaskPage({ tasks, handleEditTask }) {
             value={title}
             placeholder="task title"
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
-
           <label>Description:</label>
-          <input
-            type="text"
+          <textarea
             name="description"
             value={description}
+            rows="5"
             placeholder="task description"
             onChange={(e) => setDescription(e.target.value)}
           />
-
           <label>Assignee:</label>
           <input
             type="text"
@@ -55,44 +54,55 @@ function EditTaskPage({ tasks, handleEditTask }) {
             value={assignee}
             placeholder="task assignee"
             onChange={(e) => setAssignee(e.target.value)}
+            required
           />
           {/* Try to implement radio buttons */}
-          <label>
-            Priority:
-            <select
-              name="status"
-              value={status}
-              onChange={(e) => setPriority(e.target.value)}
-            >
-              <option value="">-- None --</option>
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
-          </label>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              margin: "10px 0",
+            }}
+          >
+            <label>
+              Priority:
+              <select
+                name="priority"
+                value={priority}
+                onChange={(e) => setPriority(e.target.value)}
+                required
+              >
+                <option value="">-- None --</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
 
-          {/* Logic to implement */}
-          <label>
-            Status:
-            <select
-              name="priority"
-              value={priority}
-              onChange={(e) => setStatus(e.target.value)}
-            >
-              <option value="">-- None --</option>
-              <option value="todo">To Do</option>
-              <option value="inProgress">In Progress</option>
-              <option value="inReview">In Review</option>
-              <option value="done">Done</option>
-            </select>
-            <label>Due Date:</label>
-            <input
-              type="text"
-              name="dueDate"
-              value={dueDate}
-              onChange={(e) => setDueDate(e.target.value)}
-            />
-          </label>
+            {/* Logic to implement */}
+            <label>
+              Status:
+              <select
+                name="status"
+                value={status}
+                onChange={(e) => setStatus(e.target.value)}
+              >
+                <option value="">-- None --</option>
+                <option value="todo">To Do</option>
+                <option value="inProgress">In Progress</option>
+                <option value="inReview">In Review</option>
+                <option value="done">Done</option>
+              </select>
+            </label>
+          </div>
+          <label>Due Date:*</label>
+          <input
+            type="date"
+            name="dueDate"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            required
+          />
           <button type="submit" className="delete">
             Edit task
           </button>

@@ -96,13 +96,14 @@ function CreateTask({ handleAddTask }) {
             </select>
           </label>
           <label>
-            Due Date:
+            Due Date:*
             <input
               type="date"
               name="dueDate"
               min={today}
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
+              required
             />
           </label>
 
