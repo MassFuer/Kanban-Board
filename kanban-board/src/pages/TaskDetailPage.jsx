@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import TaskList from "../components/TaskList";
 import TaskCard from "../components/TaskCard";
 
 function TaskDetailPage({ tasks, handleDelete, handleEdit }) {

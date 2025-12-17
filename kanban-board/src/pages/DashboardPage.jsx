@@ -1,4 +1,3 @@
-import Sidebar from "../components/Sidebar";
 import TaskList from "../components/TaskList";
 import CreateTask from "../components/CreateTask";
 
