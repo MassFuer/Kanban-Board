@@ -27,11 +27,8 @@ nav {
   align-items: center;
   background-color: #213448;
   min-height: 10vh;
-  padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav .logo img {
@@ -62,74 +59,86 @@ nav .links a {
 }
 
 nav .links a:hover {
-  background-color: rgba(234, 224, 207, 0.1);
+  color: #eae0cf;
   border: 1px solid #eae0cf;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav .active {
-  background-color: rgba(234, 224, 207, 0.2);
+  color: #eae0cf;
   border: 1px solid #eae0cf;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-main {
+/* App Container */
+.app-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  /* align-items: center; */
   min-height: 70vh;
   margin-bottom: 5px;
-  margin-left: 250px;
 }
+
+/* Main */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Sidebar */
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  margin-top: 10px;
+  margin: 10px;
   font-weight: bold;
   border: 4px solid #213448;
   border-radius: 8px;
   background-color: #eae0cf;
   width: 10%;
-  height: 70vh;
+  min-height: 70vh;
   padding: 20px 10px;
+  transition: all 0.3s ease;
+  position: relative;
 }
-
 .sidebar a {
   text-decoration: none;
   color: #213448;
-  padding: 8px 12px;
+}
+.sidebar a:hover {
+  color: #213448;
+  border: 1px solid #213448;
   border-radius: 4px;
-  width: 100%;
   transition: all 0.3s ease;
 }
+.sidebar.collapsed {
+  width: 60px;
+  padding: 20px 5px;
+}
 
-.sidebar a:hover {
-  background-color: #f0f0f0;
-  border: 1px solid #213448;
+.sidebar.collapsed a {
+  display: none;
 }
 
 .collapse-button {
-  position: absolute;
   font-size: 20px;
   border: 2px solid #213448;
-  background-color: #fff;
-  cursor: pointer;
-  padding: 5px 10px;
   border-radius: 4px;
+  background-color: #eae0cf;
+  color: #213448;
+  padding: 8px;
+  align-self: center;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
-/* .collapse {
-  width: 0;
-} */
 
-.collapse-button {
-  position: fixed;
-  font-size: 20px;
-  border: none;
-  left: 190px;
-  top: 120px;
-  background-color: #eae0cf;
+.collapse-button:hover {
+  background-color: #213448;
+  color: #eae0cf;
 }
 
 /* Tasks container */

@@ -42,36 +42,38 @@ function App() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <DashboardPage
-                tasks={tasks}
-                handleDelete={handleDelete}
-                handleAddTask={handleAddTask}
-              />
-            }
-          />
-          <Route
-            path="/task-details/:taskId"
-            element={
-              <TaskDetailPage tasks={tasks} handleDelete={handleDelete} />
-            }
-          />
-          <Route
-            path="/edit-task/:taskId"
-            element={
-              <EditTaskPage tasks={tasks} handleEditTask={handleEditTask} />
-            }
-          />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/form" element={<CreateTask />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+      <div className="app-container">
+        <Sidebar />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <DashboardPage
+                  tasks={tasks}
+                  handleDelete={handleDelete}
+                  handleAddTask={handleAddTask}
+                />
+              }
+            />
+            <Route
+              path="/task-details/:taskId"
+              element={
+                <TaskDetailPage tasks={tasks} handleDelete={handleDelete} />
+              }
+            />
+            <Route
+              path="/edit-task/:taskId"
+              element={
+                <EditTaskPage tasks={tasks} handleEditTask={handleEditTask} />
+              }
+            />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/form" element={<CreateTask />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </div>
       <Footer />
     </>
   );
