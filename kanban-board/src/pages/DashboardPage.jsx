@@ -6,8 +6,8 @@ function DashboardPage({
   tasks,
   handleDelete,
   handleAddTask,
-  handleUpdateStatus,
-  setTasks,
+  handleDragStart,
+  handleDrop,
 }) {
   return (
     <>
@@ -19,7 +19,12 @@ function DashboardPage({
           colummn In Review : get all TaskCard in the TaskList that have the status In Review
           colummn Done : get all TaskCard in the TaskList that have the status Done */}
 
-        <TaskList tasks={tasks} handleDelete={handleDelete} />
+        <TaskList
+          tasks={tasks}
+          handleDelete={handleDelete}
+          handleDragStart={handleDragStart}
+          handleDrop={handleDrop}
+        />
       </div>
     </>
   );

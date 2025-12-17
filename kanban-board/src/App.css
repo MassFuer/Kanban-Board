@@ -141,21 +141,15 @@ main {
   color: #eae0cf;
 }
 
-/* Tasks container */
-
-.tasks-container {
-  background-color: #eae0cf;
-  /* width: 90%; */
-  padding: 20px;
-}
-
 /* About page */
 .project {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 100%;
+  padding: 40px;
 }
 .project p {
   font-size: 20px;
@@ -209,6 +203,16 @@ footer a:hover {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
+
+
+/* Tasks container */
+
+.tasks-container {
+  background-color: #eae0cf;
+  flex: 1;
+  padding: 20px;
+}
+
 
 /* Tasks list container */
 .tasks-list-container {
@@ -521,13 +525,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   background-color: #213448;
-  min-height: 10vh;
+  height: 10vh;
   color: #eae0cf;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
-  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
@@ -551,6 +555,9 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  width: 100%;
+  padding: 40px;
+  min-height: 70vh;
 }
 .not-found button {
   background-color: #213448;

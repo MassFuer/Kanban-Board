@@ -18,6 +18,8 @@ function App() {
   // This allows use to navigate without clicking
   const nav = useNavigate();
   const [tasks, setTasks] = useState(tasksData);
+  const [draggedTask, setDraggedTask] = useState(null);
+
   function handleDelete(taskId) {
     const filteredTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(filteredTasks);
@@ -39,6 +41,40 @@ function App() {
     nav("/");
     return setTasks(updatedTaskArray);
   }
+
+  function handleDragStart(task) {
+    setDraggedTask(task);
+  }
+
+  function handleDrop(e, newStatus, targetTask) {
+    e.preventDefault();
+    if (!draggedTask) return;
+
+    // If dropping on the same task, do nothing
+    if (targetTask && draggedTask.id === targetTask.id) {
+      setDraggedTask(null);
+      return;
+    }
+
+    // Remove the dragged task from the array
+    const filteredTasks = tasks.filter((task) => task.id !== draggedTask.id);
+
+    // Update the dragged task's status
+    const updatedDraggedTask = { ...draggedTask, status: newStatus };
+
+    // If we have a target task, insert before it
+    if (targetTask) {
+      const targetIndex = filteredTasks.findIndex((task) => task.id === targetTask.id);
+      filteredTasks.splice(targetIndex, 0, updatedDraggedTask);
+      setTasks(filteredTasks);
+    } else {
+      // If no target (dropped on empty space in column), add to the end
+      setTasks([...filteredTasks, updatedDraggedTask]);
+    }
+
+    setDraggedTask(null);
+  }
+
   return (
     <>
       <Navbar />
@@ -53,6 +89,8 @@ function App() {
                   tasks={tasks}
                   handleDelete={handleDelete}
                   handleAddTask={handleAddTask}
+                  handleDragStart={handleDragStart}
+                  handleDrop={handleDrop}
                 />
               }
             />

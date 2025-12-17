@@ -3,9 +3,18 @@ import { IoExpandOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
 function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
+  const onDragStart = (e) => {
+    e.dataTransfer.setData("taskId", task.id);
+    if (handleDragStart) {
+      handleDragStart(task);
+    }
+  };
+
   const onDrop = (e) => {
     e.stopPropagation();
-    handleDrop(e, task.status, task);
+    if (handleDrop) {
+      handleDrop(e, task.status, task);
+    }
   };
 
   return (
@@ -14,7 +23,7 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
         className="task-card"
         data-priority={task.priority}
         draggable
-        onDragStart={() => handleDragStart(task)}
+        onDragStart={onDragStart}
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
       >
