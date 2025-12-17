@@ -156,8 +156,8 @@ main {
 
 div .members {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
@@ -170,11 +170,13 @@ div .profile-links {
   border: 1px solid #eae0cf;
   border-radius: 5px;
   padding: 5px;
-  font-size:36px;
+  font-size: 36px;
+  color: #1a2836;
 }
 
 div .profile-links span {
   font-weight: bold;
+  color: #1a2836;
 }
 
 /* Footer */

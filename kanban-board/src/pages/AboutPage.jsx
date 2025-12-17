@@ -8,7 +8,7 @@ function AboutPage() {
       <div className="project">
         <h1>Project Description</h1>
         <p>Super Kanban to manage your tasks</p>
-        <p>Team Member :</p>
+        <p>Team Members :</p>
         <div className="members">
           <div className="profile-links">
             <span>Amrit</span>

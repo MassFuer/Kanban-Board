@@ -64,12 +64,14 @@ function App() {
 
     // If we have a target task, insert before it
     if (targetTask) {
-      const targetIndex = filteredTasks.findIndex((task) => task.id === targetTask.id);
+      const targetIndex = filteredTasks.findIndex(
+        (task) => task.id === targetTask.id
+      );
       filteredTasks.splice(targetIndex, 0, updatedDraggedTask);
       setTasks(filteredTasks);
     } else {
       // If no target (dropped on empty space in column), add to the end
-      setTasks([...filteredTasks, updatedDraggedTask]);
+      setTasks([updatedDraggedTask, ...filteredTasks]);
     }
 
     setDraggedTask(null);
