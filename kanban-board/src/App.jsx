@@ -46,7 +46,7 @@ function App() {
     setDraggedTask(task);
   }
 
-  function handleDrop(e, newStatus, targetTask) {
+  function handleDrop(e, newStatus, targetTask, dropPosition = 'before') {
     e.preventDefault();
     if (!draggedTask) return;
 
@@ -62,12 +62,14 @@ function App() {
     // Update the dragged task's status
     const updatedDraggedTask = { ...draggedTask, status: newStatus };
 
-    // If we have a target task, insert before it
+    // If we have a target task, insert before or after it based on dropPosition
     if (targetTask) {
       const targetIndex = filteredTasks.findIndex(
         (task) => task.id === targetTask.id
       );
-      filteredTasks.splice(targetIndex, 0, updatedDraggedTask);
+      // Insert after if dropPosition is 'after', otherwise insert before
+      const insertIndex = dropPosition === 'after' ? targetIndex + 1 : targetIndex;
+      filteredTasks.splice(insertIndex, 0, updatedDraggedTask);
       setTasks(filteredTasks);
     } else {
       // If no target (dropped on empty space in column), add to the end

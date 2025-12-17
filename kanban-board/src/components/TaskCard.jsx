@@ -10,10 +10,25 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
     }
   };
 
+  const onDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Calculate if cursor is in top or bottom half of card
+    const rect = e.currentTarget.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const isBottomHalf = e.clientY > midpoint;
+
+    // Store position info for the drop handler
+    e.dataTransfer.dropEffect = 'move';
+    e.currentTarget.dataset.dropPosition = isBottomHalf ? 'after' : 'before';
+  };
+
   const onDrop = (e) => {
     e.stopPropagation();
     if (handleDrop) {
-      handleDrop(e, task.status, task);
+      const dropPosition = e.currentTarget.dataset.dropPosition || 'before';
+      handleDrop(e, task.status, task, dropPosition);
     }
   };
 
@@ -24,7 +39,7 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
         data-priority={task.priority}
         draggable
         onDragStart={onDragStart}
-        onDragOver={(e) => e.preventDefault()}
+        onDragOver={onDragOver}
         onDrop={onDrop}
       >
         <div className="task-card-header">
