@@ -38,52 +38,40 @@ function App() {
     // this take us to the nav url defined above
     nav("/");
     return setTasks(updatedTaskArray);
-
-    // Drag'n'Drop
   }
-  const updateTaskStatus = (taskId, newStatus) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId ? { ...task, status: newStatus } : task
-      )
-    );
-  };
   return (
     <>
       <Navbar />
-      <div className="app-container">
-        <Sidebar />
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <DashboardPage
-                  tasks={tasks}
-                  handleDelete={handleDelete}
-                  handleAddTask={handleAddTask}
-                  updateTaskStatus={updateTaskStatus}
-                />
-              }
-            />
-            <Route
-              path="/task-details/:taskId"
-              element={
-                <TaskDetailPage tasks={tasks} handleDelete={handleDelete} />
-              }
-            />
-            <Route
-              path="/edit-task/:taskId"
-              element={
-                <EditTaskPage tasks={tasks} handleEditTask={handleEditTask} />
-              }
-            />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/form" element={<CreateTask />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
-      </div>
+      <Sidebar />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <DashboardPage
+                tasks={tasks}
+                handleDelete={handleDelete}
+                handleAddTask={handleAddTask}
+              />
+            }
+          />
+          <Route
+            path="/task-details/:taskId"
+            element={
+              <TaskDetailPage tasks={tasks} handleDelete={handleDelete} />
+            }
+          />
+          <Route
+            path="/edit-task/:taskId"
+            element={
+              <EditTaskPage tasks={tasks} handleEditTask={handleEditTask} />
+            }
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/form" element={<CreateTask />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );
