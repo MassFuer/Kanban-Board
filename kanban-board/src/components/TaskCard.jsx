@@ -45,8 +45,8 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
             </NavLink>
           </div>
         </div>
-        <p>
-          <strong>Description:</strong>
+        <p className="description">
+          <strong>Description: </strong>
           {task.description}
         </p>
         <p>
