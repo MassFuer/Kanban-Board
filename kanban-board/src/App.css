@@ -327,6 +327,9 @@ footer a:hover {
   margin: 0;
   flex: 1;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .task-card-actions {
@@ -343,6 +346,15 @@ footer a:hover {
   line-height: 1.6;
   text-align: left;
   margin: 4px 0;
+}
+
+.description {
+  min-height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .task-card p strong {

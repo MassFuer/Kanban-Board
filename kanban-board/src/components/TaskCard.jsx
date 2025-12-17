@@ -45,6 +45,10 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
             </NavLink>
           </div>
         </div>
+        <p className="description">
+          <strong>Description: </strong>
+          {task.description}
+        </p>
         <p>
           <strong>Assign to: </strong>
           {task.assignee}
@@ -70,10 +74,6 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
             {task.dueDate}
           </p>
         </div>
-        <p className="task-description">
-          <strong>Description:</strong>
-          {task.description}
-        </p>
         <button onClick={() => handleDelete(task.id)} className="delete">
           Delete
         </button>
