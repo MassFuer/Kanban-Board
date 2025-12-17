@@ -10,11 +10,13 @@ function TaskDetailPage({ tasks, handleDelete, handleEdit }) {
 
   return (
     <>
-      <TaskCard
-        task={task}
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-      />
+      <div className="task-detail-page">
+        <TaskCard
+          task={task}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
+      </div>
     </>
   );
 }

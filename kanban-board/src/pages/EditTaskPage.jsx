@@ -28,8 +28,9 @@ function EditTaskPage({ tasks, handleEditTask }) {
   }
   return (
     <>
-      <form onSubmit={handleUpdateTask}>
-        <div className="task-card task-edit">
+      <div className="task-edit-page">
+        <form onSubmit={handleUpdateTask}>
+          <div className="task-card task-edit">
           <label>Title:</label>
           <input
             type="text"
@@ -73,9 +74,9 @@ function EditTaskPage({ tasks, handleEditTask }) {
                 required
               >
                 <option value="">-- None --</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
               </select>
             </label>
 
@@ -88,10 +89,10 @@ function EditTaskPage({ tasks, handleEditTask }) {
                 onChange={(e) => setStatus(e.target.value)}
               >
                 <option value="">-- None --</option>
-                <option value="todo">To Do</option>
-                <option value="inProgress">In Progress</option>
-                <option value="inReview">In Review</option>
-                <option value="done">Done</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="In Review">In Review</option>
+                <option value="Done">Done</option>
               </select>
             </label>
           </div>
@@ -106,8 +107,9 @@ function EditTaskPage({ tasks, handleEditTask }) {
           <button type="submit" className="delete">
             Edit task
           </button>
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

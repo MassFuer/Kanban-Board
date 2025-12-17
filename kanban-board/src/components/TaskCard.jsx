@@ -27,20 +27,24 @@ function TaskCard({ task, handleDelete, handleDragStart, handleDrop }) {
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
       >
-        <h2>{task.title}</h2>
-        {/* edit button */}
-        <NavLink to={`/edit-task/${task.id}`}>
-          <button className="edit">
-            <MdOutlineEdit />
-          </button>
-        </NavLink>
+        <div className="task-card-header">
+          <h2>{task.title}</h2>
+          <div className="task-card-actions">
+            {/* edit button */}
+            <NavLink to={`/edit-task/${task.id}`}>
+              <button className="edit">
+                <MdOutlineEdit />
+              </button>
+            </NavLink>
 
-        {/* expand button */}
-        <NavLink to={`/task-details/${task.id}`}>
-          <button className="toggle">
-            <IoExpandOutline />
-          </button>
-        </NavLink>
+            {/* expand button */}
+            <NavLink to={`/task-details/${task.id}`}>
+              <button className="toggle">
+                <IoExpandOutline />
+              </button>
+            </NavLink>
+          </div>
+        </div>
         <p>
           <strong>Description:</strong>
           {task.description}
