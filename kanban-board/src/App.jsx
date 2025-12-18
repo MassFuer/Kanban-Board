@@ -23,6 +23,7 @@ function App() {
   function handleDelete(taskId) {
     const filteredTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(filteredTasks);
+    nav("/");
   }
 
   function handleAddTask(newTask) {
@@ -46,7 +47,7 @@ function App() {
     setDraggedTask(task);
   }
 
-  function handleDrop(e, newStatus, targetTask, dropPosition = 'before') {
+  function handleDrop(e, newStatus, targetTask, dropPosition = "before") {
     e.preventDefault();
     if (!draggedTask) return;
 
@@ -68,7 +69,8 @@ function App() {
         (task) => task.id === targetTask.id
       );
       // Insert after if dropPosition is 'after', otherwise insert before
-      const insertIndex = dropPosition === 'after' ? targetIndex + 1 : targetIndex;
+      const insertIndex =
+        dropPosition === "after" ? targetIndex + 1 : targetIndex;
       filteredTasks.splice(insertIndex, 0, updatedDraggedTask);
       setTasks(filteredTasks);
     } else {
